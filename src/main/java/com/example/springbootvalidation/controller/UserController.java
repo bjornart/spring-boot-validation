@@ -17,10 +17,11 @@ import javax.validation.Valid;
 
         @RequestMapping("addUser")
         public String add(@Valid User user, BindingResult result) {
+            System.out.println(result);
             if (result.hasErrors()) {
                 return "add";
             }
-            System.out.println("Save user =" + user);
+            System.out.println("Saved user " + user.getName());
             return "success";
         }
     }
